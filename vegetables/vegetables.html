@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vegetables - Our Products</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #3A7D44;
+      color: white;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .logo-text {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Vegetables Section */
+    .vegetables {
+      padding: 50px 20px;
+      text-align: center;
+      background-color: #fff;
+    }
+
+    .vegetables h2 {
+      font-size: 2em;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .product-card-link {
+      text-decoration: none;
+      color: inherit;
+      width: 100%;
+      max-width: 250px;
+    }
+
+    .product-card {
+      background-color: #fafafa;
+      border: 1px solid #ddd;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .product-card h3 {
+      font-size: 1.5em;
+      margin-top: 15px;
+      color: #333;
+    }
+
+    .product-card p {
+      font-size: 1.2em;
+      color: #555;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #3A7D44;
+      color: white;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo" class="logo-img">
+      <h1 class="logo-text">Farm Fresh</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#">Join as Farmer</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="vegetables">
+    <h2>Vegetables</h2>
+    <div class="product-grid">
+
+      <!-- Tomato -->
+      <a href="tomato.html" class="product-card-link">
+        <div class="product-card">
+          <img src="images/tomato.png" alt="Tomato">
+          <h3>Tomato</h3>
+          <p>Price: 80RS / kg</p>
+        </div>
+      </a>
+
+      <!-- Spinach -->
+      <a href="spinach.html" class="product-card-link">
+        <div class="product-card">
+          <img src="images/Spinach.jpg" alt="Spinach">
+          <h3>Spinach</h3>
+          <p>Price: 90RS / kg</p>
+        </div>
+      </a>
+
+      <!-- Cauliflower -->
+      <a href="cauliflower.html" class="product-card-link">
+        <div class="product-card">
+          <img src="images/cauliflower.jpg" alt="Cauliflower">
+          <h3>Cauliflower</h3>
+          <p>Price: 70RS / kg</p>
+        </div>
+      </a>
+
+      <!-- Carrot -->
+      <a href="carrot.html" class="product-card-link">
+        <div class="product-card">
+          <img src="images/carrot.jpeg" alt="Carrot">
+          <h3>Carrot</h3>
+          <p>Price: 60RS / kg</p>
+        </div>
+      </a>
+
+      <!-- Cucumber -->
+      <a href="cucumber.html" class="product-card-link">
+        <div class="product-card">
+          <img src="images/cucumber.jpeg" alt="Cucumber">
+          <h3>Cucumber</h3>
+          <p>Price: 50RS / kg</p>
+        </div>
+      </a>
+
+      <!-- Potato -->
+      <a href="potato.html" class="product-card-link">
+        <div class="product-card">
+          <img src="images/Potato.jpeg" alt="Potato">
+          <h3>Potato</h3>
+          <p>Price: 100RS / kg</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Farm Fresh. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
