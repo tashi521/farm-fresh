@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Farm Fresh</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* Add simple popup styling for clarity */
+    .popup { display: none; position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); align-items: center; justify-content: center; }
+    .popup-content { background: white; padding: 20px; max-width: 500px; width: 90%; position: relative; border-radius: 10px; }
+    .close-btn { position: absolute; top: 10px; right: 20px; cursor: pointer; font-size: 24px; }
+    .form-group { margin-bottom: 10px; }
+    .form-group label { display: block; margin-bottom: 5px; }
+    .form-group input, .form-group select { width: 100%; padding: 8px; box-sizing: border-box; }
+    .option-btn { margin: 5px 0; display: block; width: 100%; padding: 10px; background: #2c7a2c; color: white; border: none; border-radius: 5px; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="./images/logo.png" alt="Farm Fresh Logo" class="logo-img" />
+    <span class="logo-text">Welcome to Farm Fresh</span>
+  </div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="join-as-farmer.html">Join as Farmer</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- Login/Signup Popup Button -->
+<button class="open-popup-btn" aria-label="Open Login/Signup Popup">Login / Signup</button>
+
+<!-- Popup Modal -->
+<div class="popup" id="popup" role="dialog" aria-labelledby="popup-label" aria-hidden="true">
+  <div class="popup-content">
+    <span class="close-btn" id="close-btn" aria-label="Close Popup">&times;</span>
+
+    <!-- Login/Signup Form -->
+    <div id="login-options">
+      <h2 id="popup-label">Login / Signup</h2>
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required aria-label="Email Address">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required aria-label="Password">
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+
+      <p>Or</p>
+      <button id="join-farmer" class="option-btn">Join as Farmer</button>
+      <button id="join-customer" class="option-btn">Join as Customer</button>
+    </div>
+
+    <!-- Farmer Registration Form -->
+    <div id="farmer-form" style="display: none;">
+      <h2>Farmer Registration</h2>
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="farmer-name">Name</label>
+          <input type="text" id="farmer-name" name="farmer-name" required>
+        </div>
+        <div class="form-group">
+          <label for="father-name">Father's Name</label>
+          <input type="text" id="father-name" name="father-name" required>
+        </div>
+        <div class="form-group">
+          <label for="cnic">CNIC</label>
+          <input type="text" id="cnic" name="cnic" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="province">Province</label>
+          <input type="text" id="province" name="province" required>
+        </div>
+        <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" id="city" name="city" required>
+        </div>
+        <div class="form-group">
+          <label for="village">Village</label>
+          <input type="text" id="village" name="village" required>
+        </div>
+        <div class="form-group">
+          <label for="warehouse">Warehouse Location</label>
+          <input type="text" id="warehouse" name="warehouse" required>
+        </div>
+        <button type="submit">Register</button>
+        <button type="button" id="back-to-login" class="option-btn">Back</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Fresh From Local Farms</h1>
+    <p>Discover seasonal produce directly from nearby farmers. Healthy, tasty, and always fresh.</p>
+    <a href="Explore.html" class="cta-button">Explore</a>
+  </div>
+</section>
+
+<section class="products">
+  <h2>Our Product Categories</h2>
+  <div class="product-grid">
+
+    <!-- Product Card for Vegetables) -->
+<div class="product-card">
+  <a href="vegetables/vegetables.html">
+    <img src="images/veg.jpeg" alt="Vegetables">
+    <h3>Vegetables</h3>
+  </a>
+  <p>Select your nearest farmer:</p>
+  <select class="farmer-select" data-product="Vegetables">
+    <option value="Ahmed">Ahmed (Lahore)</option>
+    <option value="Sara">Sara (Multan)</option>
+    <option value="Ali">Ali (Karachi)</option>
+    <option value="Faisalabad">Faisalabad</option>
+    <option value="Rawalpindi">Rawalpindi</option>
+    <option value="Sialkot">Sialkot</option>
+    <option value="Gujranwala">Gujranwala</option>
+    <option value="Bahawalpur">Bahawalpur</option>
+    <option value="Dera Ghazi Khan">Dera Ghazi Khan</option>
+    <option value="Sargodha">Sargodha</option>
+    <option value="Mianwali">Mianwali</option>
+    <option value="Jhang">Jhang</option>
+    <option value="Sheikhupura">Sheikhupura</option>
+    <option value="Chiniot">Chiniot</option>
+    <option value="Kasur">Kasur</option>
+    <option value="Toba Tek Singh">Toba Tek Singh</option>
+    <option value="Attock">Attock</option>
+    <option value="Rahim Yar Khan">Rahim Yar Khan</option>
+    <option value="Hafizabad">Hafizabad</option>
+    <option value="Layyah">Layyah</option>
+    <option value="Muzaffargarh">Muzaffargarh</option>
+    <option value="Narowal">Narowal</option>
+    <option value="Okara">Okara</option>
+    <option value="Nankana Sahib">Nankana Sahib</option>
+    <option value="Khushab">Khushab</option>
+    <option value="Pakpattan">Pakpattan</option>
+    <option value="Vehari">Vehari</option>
+    <option value="Jhelum">Jhelum</option>
+    <option value="Mandi Bahauddin">Mandi Bahauddin</option>
+    <option value="Muzzaffarabad">Muzaffarabad</option>
+    <option value="Kot Addu">Kot Addu</option>
+    <option value="Chakwal">Chakwal</option>
+    <option value="Gujrat">Gujrat</option>    
+  </select>
+  <button class="select-farmer-btn" id="chooseFarmerBtn">Choose Farmer</button>
+</div>
+
+
+    <!-- Wheat -->
+    <div class="product-card">
+      <a href="wheat/wheat.html">
+        <img src="images/wheat.png" alt="Wheat">
+        <h3>Wheat</h3>
+      </a>
+      <p>Select your nearest farmer:</p>
+      <select class="farmer-select" data-product="Vegetables">
+        <option value="Ahmed">Ahmed (Lahore)</option>
+        <option value="Sara">Sara (Multan)</option>
+        <option value="Ali">Ali (Karachi)</option>
+        <option value="Faisalabad">Faisalabad</option>
+        <option value="Rawalpindi">Rawalpindi</option>
+        <option value="Sialkot">Sialkot</option>
+        <option value="Gujranwala">Gujranwala</option>
+        <option value="Bahawalpur">Bahawalpur</option>
+        <option value="Dera Ghazi Khan">Dera Ghazi Khan</option>
+        <option value="Sargodha">Sargodha</option>
+        <option value="Mianwali">Mianwali</option>
+        <option value="Jhang">Jhang</option>
+        <option value="Sheikhupura">Sheikhupura</option>
+        <option value="Chiniot">Chiniot</option>
+        <option value="Kasur">Kasur</option>
+        <option value="Toba Tek Singh">Toba Tek Singh</option>
+        <option value="Attock">Attock</option>
+        <option value="Rahim Yar Khan">Rahim Yar Khan</option>
+        <option value="Hafizabad">Hafizabad</option>
+        <option value="Layyah">Layyah</option>
+        <option value="Muzaffargarh">Muzaffargarh</option>
+        <option value="Narowal">Narowal</option>
+        <option value="Okara">Okara</option>
+        <option value="Nankana Sahib">Nankana Sahib</option>
+        <option value="Khushab">Khushab</option>
+        <option value="Pakpattan">Pakpattan</option>
+        <option value="Vehari">Vehari</option>
+        <option value="Jhelum">Jhelum</option>
+        <option value="Mandi Bahauddin">Mandi Bahauddin</option>
+        <option value="Muzzaffarabad">Muzaffarabad</option>
+        <option value="Kot Addu">Kot Addu</option>
+        <option value="Chakwal">Chakwal</option>
+        <option value="Gujrat">Gujrat</option>    
+      </select>
+      <button class="select-farmer-btn" id="chooseFarmerBtn">Choose Farmer</button>
+    </div>
+
+    <!-- Fruits -->
+    <div class="product-card">
+      <a href="Fruits/Fruits.html">
+        <img src="images/fruits.jpeg" alt="Fruits">
+        <h3>Fruits</h3>
+      </a>
+      <p>Select your nearest farmer:</p>
+      <select class="farmer-select" data-product="Vegetables">
+        <option value="Ahmed">Ahmed (Lahore)</option>
+        <option value="Sara">Sara (Multan)</option>
+        <option value="Ali">Ali (Karachi)</option>
+        <option value="Faisalabad">Faisalabad</option>
+        <option value="Rawalpindi">Rawalpindi</option>
+        <option value="Sialkot">Sialkot</option>
+        <option value="Gujranwala">Gujranwala</option>
+        <option value="Bahawalpur">Bahawalpur</option>
+        <option value="Dera Ghazi Khan">Dera Ghazi Khan</option>
+        <option value="Sargodha">Sargodha</option>
+        <option value="Mianwali">Mianwali</option>
+        <option value="Jhang">Jhang</option>
+        <option value="Sheikhupura">Sheikhupura</option>
+        <option value="Chiniot">Chiniot</option>
+        <option value="Kasur">Kasur</option>
+        <option value="Toba Tek Singh">Toba Tek Singh</option>
+        <option value="Attock">Attock</option>
+        <option value="Rahim Yar Khan">Rahim Yar Khan</option>
+        <option value="Hafizabad">Hafizabad</option>
+        <option value="Layyah">Layyah</option>
+        <option value="Muzaffargarh">Muzaffargarh</option>
+        <option value="Narowal">Narowal</option>
+        <option value="Okara">Okara</option>
+        <option value="Nankana Sahib">Nankana Sahib</option>
+        <option value="Khushab">Khushab</option>
+        <option value="Pakpattan">Pakpattan</option>
+        <option value="Vehari">Vehari</option>
+        <option value="Jhelum">Jhelum</option>
+        <option value="Mandi Bahauddin">Mandi Bahauddin</option>
+        <option value="Muzzaffarabad">Muzaffarabad</option>
+        <option value="Kot Addu">Kot Addu</option>
+        <option value="Chakwal">Chakwal</option>
+        <option value="Gujrat">Gujrat</option>    
+      </select>
+      <button class="select-farmer-btn" id="chooseFarmerBtn">Choose Farmer</button>
+    </div>
+
+    <!-- Dairy -->
+    <div class="product-card">
+      <a href="Dairy/Dairy.html">
+        <img src="images/Dairy.jpg" alt="Dairy">
+        <h3>Dairy</h3>
+      </a>
+      <p>Select your nearest farmer:</p>
+      <select class="farmer-select" data-product="Vegetables">
+        <option value="Ahmed">Ahmed (Lahore)</option>
+        <option value="Sara">Sara (Multan)</option>
+        <option value="Ali">Ali (Karachi)</option>
+        <option value="Faisalabad">Faisalabad</option>
+        <option value="Rawalpindi">Rawalpindi</option>
+        <option value="Sialkot">Sialkot</option>
+        <option value="Gujranwala">Gujranwala</option>
+        <option value="Bahawalpur">Bahawalpur</option>
+        <option value="Dera Ghazi Khan">Dera Ghazi Khan</option>
+        <option value="Sargodha">Sargodha</option>
+        <option value="Mianwali">Mianwali</option>
+        <option value="Jhang">Jhang</option>
+        <option value="Sheikhupura">Sheikhupura</option>
+        <option value="Chiniot">Chiniot</option>
+        <option value="Kasur">Kasur</option>
+        <option value="Toba Tek Singh">Toba Tek Singh</option>
+        <option value="Attock">Attock</option>
+        <option value="Rahim Yar Khan">Rahim Yar Khan</option>
+        <option value="Hafizabad">Hafizabad</option>
+        <option value="Layyah">Layyah</option>
+        <option value="Muzaffargarh">Muzaffargarh</option>
+        <option value="Narowal">Narowal</option>
+        <option value="Okara">Okara</option>
+        <option value="Nankana Sahib">Nankana Sahib</option>
+        <option value="Khushab">Khushab</option>
+        <option value="Pakpattan">Pakpattan</option>
+        <option value="Vehari">Vehari</option>
+        <option value="Jhelum">Jhelum</option>
+        <option value="Mandi Bahauddin">Mandi Bahauddin</option>
+        <option value="Muzzaffarabad">Muzaffarabad</option>
+        <option value="Kot Addu">Kot Addu</option>
+        <option value="Chakwal">Chakwal</option>
+        <option value="Gujrat">Gujrat</option>    
+      </select>
+      <button class="select-farmer-btn" id="chooseFarmerBtn">Choose Farmer</button>
+    </div>
+
+    <!-- Rice -->
+    <div class="product-card">
+      <a href="Rice/rice.html">
+        <img src="images/rice.jpeg" alt="Rice">
+        <h3>Rice</h3>
+      </a>
+      <p>Select your nearest farmer:</p>
+      <select class="farmer-select" data-product="Vegetables">
+        <option value="Ahmed">Ahmed (Lahore)</option>
+        <option value="Sara">Sara (Multan)</option>
+        <option value="Ali">Ali (Karachi)</option>
+        <option value="Faisalabad">Faisalabad</option>
+        <option value="Rawalpindi">Rawalpindi</option>
+        <option value="Sialkot">Sialkot</option>
+        <option value="Gujranwala">Gujranwala</option>
+        <option value="Bahawalpur">Bahawalpur</option>
+        <option value="Dera Ghazi Khan">Dera Ghazi Khan</option>
+        <option value="Sargodha">Sargodha</option>
+        <option value="Mianwali">Mianwali</option>
+        <option value="Jhang">Jhang</option>
+        <option value="Sheikhupura">Sheikhupura</option>
+        <option value="Chiniot">Chiniot</option>
+        <option value="Kasur">Kasur</option>
+        <option value="Toba Tek Singh">Toba Tek Singh</option>
+        <option value="Attock">Attock</option>
+        <option value="Rahim Yar Khan">Rahim Yar Khan</option>
+        <option value="Hafizabad">Hafizabad</option>
+        <option value="Layyah">Layyah</option>
+        <option value="Muzaffargarh">Muzaffargarh</option>
+        <option value="Narowal">Narowal</option>
+        <option value="Okara">Okara</option>
+        <option value="Nankana Sahib">Nankana Sahib</option>
+        <option value="Khushab">Khushab</option>
+        <option value="Pakpattan">Pakpattan</option>
+        <option value="Vehari">Vehari</option>
+        <option value="Jhelum">Jhelum</option>
+        <option value="Mandi Bahauddin">Mandi Bahauddin</option>
+        <option value="Muzzaffarabad">Muzaffarabad</option>
+        <option value="Kot Addu">Kot Addu</option>
+        <option value="Chakwal">Chakwal</option>
+        <option value="Gujrat">Gujrat</option>    
+      </select>
+      <button class="select-farmer-btn" id="chooseFarmerBtn">Choose Farmer</button>
+    </div>
+
+  </div>
+</section>
+
+
+<footer>
+  <p>&copy; 2025 Farm Fresh. All rights reserved. | 
+    <a href="#">Privacy Policy</a> | 
+    <a href="#">Terms</a>
+  </p>
+</footer>
+<!-- Choose Farmer Modal Popup -->
+<div class="popup" id="chooseFarmerPopup" role="dialog" aria-hidden="true">
+  <div class="popup-content">
+    <span class="close-btn" id="closeChooseFarmerPopup" aria-label="Close Popup">&times;</span>
+
+    <h2>Select Farmer</h2>
+
+    <p>Choose how you'd like to find the nearest farmer:</p>
+
+    <button class="option-btn" id="shareLocationBtn">Share Your Live Location</button>
+    <button class="option-btn" id="searchByCityBtn">Search by City</button>
+  </div>
+</div>
+
+
+<script>
+  const openPopupBtn = document.querySelector('.open-popup-btn');
+  const popup = document.getElementById('popup');
+  const closeBtn = document.getElementById('close-btn');
+  const loginOptions = document.getElementById('login-options');
+  const farmerForm = document.getElementById('farmer-form');
+  const joinFarmerBtn = document.getElementById('join-farmer');
+  const joinCustomerBtn = document.getElementById('join-customer');
+  const backToLoginBtn = document.getElementById('back-to-login');
+
+  openPopupBtn.addEventListener('click', () => {
+    popup.style.display = 'flex';
+    popup.setAttribute('aria-hidden', 'false');
+    loginOptions.style.display = 'block';
+    farmerForm.style.display = 'none';
+  });
+
+  closeBtn.addEventListener('click', () => {
+    popup.style.display = 'none';
+    popup.setAttribute('aria-hidden', 'true');
+  });
+
+  window.addEventListener('click', (event) => {
+    if (event.target === popup) {
+      popup.style.display = 'none';
+      popup.setAttribute('aria-hidden', 'true');
+    }
+  });
+
+  joinFarmerBtn.addEventListener('click', () => {
+    loginOptions.style.display = 'none';
+    farmerForm.style.display = 'block';
+  });
+
+  joinCustomerBtn.addEventListener('click', () => {
+    alert('Customer registration will be implemented soon!');
+    popup.style.display = 'none';
+  });
+
+  backToLoginBtn.addEventListener('click', () => {
+    loginOptions.style.display = 'block';
+    farmerForm.style.display = 'none';
+  });
+  // Select the "Choose Farmer" button
+const chooseFarmerBtns = document.querySelectorAll('.select-farmer-btn');
+const chooseFarmerPopup = document.getElementById('chooseFarmerPopup');
+const closeChooseFarmerPopup = document.getElementById('closeChooseFarmerPopup');
+
+// Handle popup opening and closing
+chooseFarmerBtns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    chooseFarmerPopup.style.display = 'flex';
+    chooseFarmerPopup.setAttribute('aria-hidden', 'false');
+  });
+});
+
+closeChooseFarmerPopup.addEventListener('click', () => {
+  chooseFarmerPopup.style.display = 'none';
+  chooseFarmerPopup.setAttribute('aria-hidden', 'true');
+});
+
+window.addEventListener('click', (event) => {
+  if (event.target === chooseFarmerPopup) {
+    chooseFarmerPopup.style.display = 'none';
+    chooseFarmerPopup.setAttribute('aria-hidden', 'true');
+  }
+});
+
+// Add the functionality for sharing live location and searching by city
+document.getElementById('shareLocationBtn').addEventListener('click', () => {
+  alert('This will share your live location to show nearest farmers.');
+  // Here you can call a function to get the user’s live location and filter farmers accordingly.
+});
+
+document.getElementById('searchByCityBtn').addEventListener('click', () => {
+  const city = prompt('Enter the city name:');
+  alert(`Searching for farmers in ${city}.`);
+  // Here, you can filter farmers by the city provided by the user.
+});
+
+</script>
+
+</body>
+</html>
