@@ -1,0 +1,30 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "Tomato",
+        "price": 100,
+        "description": "Fresh organic tomatoes."
+      },
+      {
+        "id": 2,
+        "name": "Rice",
+        "price": 200,
+        "description": "High-quality basmati rice."
+      }
+    ],
+    "users": [
+      {
+        "id": 1,
+        "name": "John Doe",
+        "email": "john.doe@example.com"
+      }
+    ],
+    "cart": [
+      { "id": 1, "name": "Tomato", "price": 3 },
+      { "id": 2, "name": "Potato", "price": 2 },
+      { "id": 3, "name": "Onion", "price": 1.5 }
+    ]
+  }
+  
+    
